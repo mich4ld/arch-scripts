@@ -63,12 +63,6 @@ function install_browsers() {
    paru -S firefox brave-bin
 }
 
-function end_installation() {
-  echo "Rebooting..."
-  sleep 8
-  reboot
-}
-
 install_base
 install_aur
 install_fonts
