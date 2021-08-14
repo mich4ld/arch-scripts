@@ -1,2 +1,2 @@
-# arch-scripts
+# Work in progress...
 Automate installing important Arch packages
