@@ -22,6 +22,7 @@ function install_aur() {
    git clone https://aur.archlinux.org/paru-bin.git
    cd paru-bin
    makepkg -si
+   cd "$(dirname "$0")"
 }
 
 function install_tools() {
