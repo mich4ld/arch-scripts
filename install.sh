@@ -12,8 +12,9 @@ function install_base() {
 function install_fonts() {
    echo "Installing fonts..."
    sudo pacman -S noto-fonts-emoji ttf-roboto-mono ttf-liberation ttf-droid
-    mkdir -p $FONTS_DIR
-    cp -v ./fonts/* $FONTS_DIR
+   mkdir -p $FONTS_DIR
+   cp -v ./fonts/* $FONTS_DIR
+   sudo fc-cache -f -v
 }
 
 function install_aur() {
