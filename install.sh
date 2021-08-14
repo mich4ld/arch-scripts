@@ -1,3 +1,6 @@
+FONTS_DIR=~/.local/share/fonts/
+cd "$(dirname "$0")"
+
 function install_base() {
     echo "Installing basic modules..."
     sudo pacman -S xdg-user-dirs git nano vim fuse unzip gvfs gvfs-mtp gvfs-afc gvfs-nfs gvfs-smb openssh jre11-openjdk python-pip base-devel cmake alsa-plugins alsa-utils pamixer pulseaudio
@@ -9,6 +12,8 @@ function install_base() {
 function install_fonts() {
    echo "Installing fonts..."
    sudo pacman -S noto-fonts-emoji ttf-roboto-mono ttf-liberation ttf-droid
+    mkdir -p $FONTS_DIR
+    cp -v ./fonts/* $FONTS_DIR
 }
 
 function install_aur() {
