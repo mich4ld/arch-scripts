@@ -23,14 +23,6 @@ function install_aur() {
    makepkg -si
 }
 
-function install_privacy_apps() {
-   echo "Installing and configure security/privacy tools..."
-   sudo pacman -S ufw gufw tor openvpn keepassxc
-
-   echo "Configure firewall..."
-   sudo ufw enable
-}
-
 function install_tools() {
    echo "Install tools and utils..."
    sudo pacman -S neofetch cmatrix htop gparted redshift flameshot youtube-dl
