@@ -38,13 +38,6 @@ function configure_dev() {
    sudo systemctl start docker.service
    sudo systemctl enable docker.service
    sudo usermod -aG docker $USER
-
-   echo "Installing oh my zsh..."
-   sh -c "$(curl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"   
-   echo "Installing some zsh plugins..."
-   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-   git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
    
    echo "Your email for git:"
    read git_email
