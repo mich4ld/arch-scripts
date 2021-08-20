@@ -1,4 +1,6 @@
 FONTS_DIR=~/.local/share/fonts/
+FONTS_ZIP=~/fonts.zip
+
 cd "$(dirname "$0")"
 
 function install_base() {
@@ -12,8 +14,13 @@ function install_base() {
 function install_fonts() {
    echo "===> Installing fonts..."
    sudo pacman -S noto-fonts-emoji ttf-roboto-mono ttf-liberation ttf-droid
+   
+   curl -o $FONTS_ZIP 'https://raw.githubusercontent.com/mich4ld/zsh-setup/main/fonts.zip'
    mkdir -p $FONTS_DIR
-   cp -v ./fonts/* $FONTS_DIR
+   unzip $FONTS_ZIP -d $FONTS_DIR
+   echo "===> Clearing archive..."
+   rm $FONTS_ZIP
+   
    sudo fc-cache -f -v
 }
 
