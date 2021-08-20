@@ -32,12 +32,14 @@ function install_tools() {
 
 function configure_dev() {
    echo "===> Installing development tools..."
-   sudo pacman -S docker docker-compose jq whois zsh
+   paru -S docker docker-compose jq whois zsh mongodb-compass visual-studio-code-bin insomnia-bin
    
    echo "===> Configuring Docker..."
-   sudo systemctl start docker.service
-   sudo systemctl enable docker.service
+   sudo systemctl enable --now docker.service
    sudo usermod -aG docker $USER
+   
+   echo "===> Configuring zsh..."
+   curl https://raw.githubusercontent.com/mich4ld/zsh-setup/main/setup.sh | bash -s -- --no-fonts
    
    echo "===> Your email for git:"
    read git_email
@@ -48,8 +50,7 @@ function configure_dev() {
    git config --global user.email $git_email
    git config --global user.name $git_name
 
-   echo "===> Installing development tools from AUR..."
-   paru -S mongodb-compass visual-studio-code-bin insomnia-bin
+   
 }
 
 function install_browsers() {
