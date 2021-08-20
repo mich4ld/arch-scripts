@@ -56,8 +56,6 @@ function configure_dev() {
 
    git config --global user.email $git_email
    git config --global user.name $git_name
-
-   
 }
 
 function install_browsers() {
@@ -70,3 +68,4 @@ install_aur
 install_fonts
 install_tools
 install_browsers
+configure_dev
